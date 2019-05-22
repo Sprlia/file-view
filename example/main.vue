@@ -1,7 +1,7 @@
 <template>
   <div>
-    <file-view :files="datas" :visible.sync="show"></file-view>
-    <button @click="add">添加</button>
+    <file-view :files="datas" :visible.sync="show" attr="path"></file-view>
+    <button @click="add">添加</button> 
     <button @click="show = true">显示</button>
   </div>
 </template>
@@ -13,9 +13,9 @@ export default {
     return {
       show: false,
       datas: [
-        "https://wowodevimage.99rongle.com/pic/073c0a5e1b26a2d5f3939cf0d13a158e.mp4",
-        "https://wowodevimage.99rongle.com/pic/xuanzhong2.png",
-        "https://wowodevimage.99rongle.com/pic/pj.png"
+        {path:"https://wowodevimage.99rongle.com/pic/073c0a5e1b26a2d5f3939cf0d13a158e.mp4"},
+        {path:"https://wowodevimage.99rongle.com/pic/xuanzhong2.png"},
+        {path:"https://wowodevimage.99rongle.com/pic/pj.png"},
       ]
     };
   },

@@ -6,7 +6,8 @@ import viewMain from "./components/view";
 export default {
   props: {
     files: Array,
-    visible: Boolean
+    visible: Boolean,
+    attr: String
   },
   data: function() {
     return {
@@ -27,6 +28,7 @@ export default {
               onUpdateVisible={_this.updateVisible}
               visible={_this.visible}
               files={_this.files}
+              attr={_this.attr}
             />
           );
         }

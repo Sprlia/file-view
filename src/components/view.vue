@@ -1,6 +1,6 @@
 <template>
   <div class="_file-view" v-show="visible" @wheel="wheel">
-    <component :is="file_ext" ref="file" :src="files[index]"></component>
+    <component :is="file_ext" ref="file" :src="current_src"></component>
     <i class="close iconfont iconclose" @click="$emit('updateVisible', false)"></i>
     <i class="left iconfont iconleft" @click="last"></i>
     <i class="right iconfont iconright" @click="next"></i>
@@ -19,7 +19,8 @@ export default {
   },
   props: {
     visible: Boolean,
-    files: Array
+    files: Array,
+    attr: String
   },
   data: function() {
     return {
@@ -45,13 +46,17 @@ export default {
   },
   watch: {},
   computed: {
+    current_src() {
+      if (this.attr && this.files[this.index][this.attr]) {
+        return this.files[this.index][this.attr];
+      } else {
+        return this.files[this.index];
+      }
+    },
     file_ext() {
-      var fileName = this.files[this.index].lastIndexOf(".");
-      let fileNameLength = this.files[this.index].length;
-      let fileFormat = this.files[this.index].substring(
-        fileName + 1,
-        fileNameLength
-      );
+      var fileName = this.current_src.lastIndexOf(".");
+      let fileNameLength = this.current_src.length;
+      let fileFormat = this.current_src.substring(fileName + 1, fileNameLength);
       return file_ext[fileFormat];
     }
   },
