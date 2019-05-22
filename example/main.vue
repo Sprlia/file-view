@@ -1,8 +1,8 @@
 <template>
   <div>
-    <vue-scroll style="width:500px;height:600px;background:#efd0d0;">
-      <div style="width:1000px;height:10000px; background: linear-gradient(red, blue);"></div>
-    </vue-scroll>
+    <file-view :files="datas" :visible.sync="show"></file-view>
+    <button @click="add">添加</button>
+    <button @click="show = true">显示</button>
   </div>
 </template>
 
@@ -10,7 +10,19 @@
 export default {
   components: {},
   data() {
-    return {};
+    return {
+      show: false,
+      datas: [
+        "https://wowodevimage.99rongle.com/pic/073c0a5e1b26a2d5f3939cf0d13a158e.mp4",
+        "https://wowodevimage.99rongle.com/pic/xuanzhong2.png",
+        "https://wowodevimage.99rongle.com/pic/pj.png"
+      ]
+    };
+  },
+  methods: {
+    add() {
+      this.datas.push("ww");
+    }
   }
 };
 </script>

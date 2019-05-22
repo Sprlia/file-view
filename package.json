@@ -1,7 +1,7 @@
 {
-  "name": "vue-scroller-sp",
-  "version": "1.0.2",
-  "description": "scroll component for vue",
+  "name": "vue-file-view",
+  "version": "1.0.0",
+  "description": "file view component for vue",
   "scripts": {
     "base": "webpack --config webpack/base.js --progress --mode development",
     "build": "webpack --config webpack/gz.js --progress --mode production",
@@ -14,8 +14,10 @@
   },
   "keywords": [
     "vue",
-    "scroll",
-    "scrollbar"
+    "file",
+    "viewer",
+    "pic",
+    "video"
   ],
   "author": "sprlia",
   "license": "ISC",
@@ -24,10 +26,11 @@
   },
   "homepage": "https://github.com/Sprlia/vue-scroll#readme",
   "dependencies": {
+    "@vue/babel-preset-jsx": "^1.0.0",
     "element-ui": "^2.8.2",
     "vue": "^2.6.10"
   },
-  "main": "dist/vueScroll.min.js",
+  "main": "dist/fileView.min.js",
   "devDependencies": {
     "webpack-cli": "^3.3.1",
     "@babel/core": "^7.4.4",

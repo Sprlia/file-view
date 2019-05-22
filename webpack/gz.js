@@ -9,7 +9,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     path: path.resolve(__dirname, '../dist'),
     libraryTarget: 'umd',
     umdNamedDefine: true,
-    filename: 'vueScroll.min.js'
+    filename: 'fileView.min.js'
   },
   entry: {
     'build': ['./src/index.js']

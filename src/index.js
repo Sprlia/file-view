@@ -1,9 +1,9 @@
-import vueScroll from './main.vue'
+import fileView from './main.vue'
 
 export default {
   install: function (Vue, config) {
-    Vue.prototype.$SPSCROLLER = config ||{}
-    Vue.component('vueScroll', vueScroll)
+    Vue.prototype.$SPFILEVIEW = config ||{}
+    Vue.component('fileView', fileView)
   }
 }
 
