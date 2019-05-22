@@ -1,6 +1,6 @@
 {
   "name": "vue-file-view",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "file view component for vue",
   "scripts": {
     "base": "webpack --config webpack/base.js --progress --mode development",
