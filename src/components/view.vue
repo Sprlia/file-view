@@ -1,7 +1,7 @@
 <template>
   <div v-if="visible">
     <div class="_file-view" @wheel="wheel">
-      <component :is="file_list[now_index]._file_view_ext" ref="file" :src="file_list[now_index]._file_view_src"></component>
+      <component v-if="file_list.length > 0" :is="file_list[now_index]._file_view_ext" ref="file" :src="file_list[now_index]._file_view_src"></component>
       <i class="close iconfont iconclose" @click="$emit('updateVisible', false)"></i>
       <i class="left iconfont iconleft" @click="last"></i>
       <i class="right iconfont iconright" @click="next"></i>
@@ -78,10 +78,10 @@ export default {
       };
     },
     set_now_index(arr) {
-      //console.log("try reindex set_now_index")
       const _this = this;
       let index_tmp = 0;
       let files = arr || this.file_list;
+      //console.log("try reindex set_now_index", files)
       for (let i = 0; i < files.length; i++) {
         if (files[i]._file_view_index == _this.index) {
           _this.now_index = i;

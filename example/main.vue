@@ -18,7 +18,8 @@ export default {
     return {
       show: false,
       index: 0,
-      datas: [
+      datas: ["https://wowodevimage.99rongle.com/pic/073c0a5e1b26a2d5f3939cf0d13a158e"]
+      /*datas: [
         {path:"https://wowodevimage.99rongle.com/pic/073c0a5e1b26a2d5f3939cf0d13a158e"},
         {path:"https://wowodevimage.99rongle.com/pic/admin/petfuwu.png"},
         {path:"https://wowodevimage.99rongle.com/pic/073c0a5e1b26a2d5f3939cf0d13a158e"},
@@ -26,7 +27,7 @@ export default {
         {path:"https://wowodevimage.99rongle.com/pic/xuanzhong2.png"},
         {path:"https://wowodevimage.99rongle.com/pic/073c0a5e1b26a2d5f3939cf0d13a158e"},
         {path:"https://wowodevimage.99rongle.com/pic/pj.png"},
-      ]
+      ]*/
     };
   },
   methods: {
