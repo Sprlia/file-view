@@ -1,5 +1,5 @@
 <template>
-  <img class="_file_content" :style="picStyle" :src="src">
+  <img :style="picStyle" class="_pic_content" ref="picture" :src="src" @mousedown="mousedown">
 </template>
 
 <script>
@@ -12,13 +12,34 @@ export default {
       zoom: 0.5,
       style: {
         width_scale: 1,
-        height_scale: 1
+        height_scale: 1,
+        top: 0,
+        left: 0
       }
     };
   },
   methods: {
     mousedown(e) {
-      console.log(e)
+      var origX = e.clientX;
+      var origY = e.clientY;
+      const _this = this;
+
+      var doDrag = function(event) {
+        event.preventDefault();
+        var moveX = event.clientX - origX;
+        var moveY = event.clientY - origY;
+        origY = event.clientY;
+        origX = event.clientX;
+        _this.style.top += moveY;
+        _this.style.left += moveX;
+      };
+      document.addEventListener("mousemove", doDrag);
+
+      var stopDrag = function() {
+        document.removeEventListener("mousemove", doDrag);
+        document.removeEventListener("mouseup", stopDrag);
+      };
+      document.addEventListener("mouseup", stopDrag, false);
     },
     wheel(e) {
       if (e.deltaY > 0) {
@@ -35,13 +56,17 @@ export default {
     src() {
       this.style = {
         width_scale: 1,
-        height_scale: 1
+        height_scale: 1,
+        top: 0,
+        left: 0
       };
     }
   },
   computed: {
     picStyle() {
       return {
+        top: this.style.top + "px",
+        left: this.style.left + "px",
         "-webkit-transform":
           "scale(" +
           this.style.width_scale +
@@ -61,12 +86,7 @@ export default {
 </script>
 
 <style>
-._file_content {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+._pic_content {
+  position: relative;
 }
 </style>

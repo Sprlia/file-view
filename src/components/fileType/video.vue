@@ -1,5 +1,5 @@
 <template>
-  <video class="_file_content" :style="picStyle" :src="src" ref="video" :controls="controls">您的浏览器不支持此文件在线播放。</video>
+  <video :style="picStyle" :src="src" ref="video" :controls="controls">您的浏览器不支持此文件在线播放。</video>
 </template>
 
 <script>
@@ -27,7 +27,7 @@ export default {
         }
       }
       if (e.deltaY < 0) {
-        if (this.$refs.video.volume + 0.1 >= 0) {
+        if (this.$refs.video.volume + 0.1 >= 1) {
           this.$refs.video.volume = 1;
         } else {
           this.$refs.video.volume = this.$refs.video.volume + 0.1;
@@ -65,13 +65,4 @@ export default {
 </script>
 
 <style>
-._file_content {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  margin: auto;
-}
 </style>

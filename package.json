@@ -1,6 +1,6 @@
 {
   "name": "vue-file-view",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "file view component for vue",
   "scripts": {
     "base": "webpack --config webpack/base.js --progress --mode development",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sprlia/vue-scroll.git"
+    "url": "git+https://github.com/Sprlia/file-view.git"
   },
   "keywords": [
     "vue",
@@ -22,9 +22,9 @@
   "author": "sprlia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Sprlia/vue-scroll/issues"
+    "url": "https://github.com/Sprlia/file-view/issues"
   },
-  "homepage": "https://github.com/Sprlia/vue-scroll#readme",
+  "homepage": "https://github.com/Sprlia/file-view#readme",
   "dependencies": {
     "@vue/babel-preset-jsx": "^1.0.0",
     "element-ui": "^2.8.2",

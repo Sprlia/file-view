@@ -1,5 +1,5 @@
 <template>
-  <div class="_file-view" v-show="visible" @wheel="wheel" @touchmove="touchmove" @mousedown="mousedown">
+  <div class="_file-view" v-show="visible" @wheel="wheel">
     <component :is="file_ext" ref="file" :src="files[index]"></component>
     <i class="close iconfont iconclose" @click="$emit('updateVisible', false)"></i>
     <i class="left iconfont iconleft" @click="last"></i>
@@ -27,16 +27,6 @@ export default {
     };
   },
   methods: {
-    mousedown(e) {
-      if (this.$refs.file.mousedown) {
-        this.$refs.file.mousedown(e);
-      }
-    },
-    touchmove(e) {
-      if (this.$refs.file.touchmove) {
-        this.$refs.file.touchmove(e);
-      }
-    },
     wheel(e) {
       if (this.$refs.file.wheel) {
         this.$refs.file.wheel(e);
@@ -79,6 +69,10 @@ export default {
   bottom: 0;
   right: 0;
   overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 ._file-view .close {
