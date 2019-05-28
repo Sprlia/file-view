@@ -1,5 +1,5 @@
 <template>
-  <div v-if="visible">
+  <div v-if="visible" style="z-index: 10000;">
     <div class="_file-view" @wheel="wheel">
       <component v-if="file_list.length > 0" :is="file_list[now_index]._file_view_ext" ref="file" :src="file_list[now_index]._file_view_src"></component>
       <i class="close iconfont iconclose" @click="$emit('updateVisible', false)"></i>
@@ -141,7 +141,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 ._file-view_back {
@@ -153,7 +153,7 @@ export default {
   overflow: hidden;
   background: #000;
   opacity: 0.3;
-  z-index: 999;
+  z-index: 9999;
 }
 
 ._file-view .close {
